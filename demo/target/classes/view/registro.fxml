@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.biblioteca_1.ui.RegistroController"
+      styleClass="login-root"
+      alignment="CENTER"
+      spacing="0">
+
+    <VBox styleClass="register-panel" spacing="0" alignment="CENTER">
+
+        <!-- Título -->
+        <Label text="&#128221;  Crear Cuenta"
+               style="-fx-font-family:'Georgia';-fx-font-size:22px;-fx-font-weight:bold;-fx-text-fill:#2C1810;-fx-padding:0 0 18 0;"/>
+
+        <!-- Nombre -->
+        <Label text="NOMBRE" styleClass="field-label"/>
+        <TextField fx:id="nombreField" promptText="Tu nombre"/>
+
+        <!-- Apellidos -->
+        <Label text="APELLIDOS" styleClass="field-label"/>
+        <TextField fx:id="apellidosField" promptText="Tus apellidos"/>
+
+        <!-- Fecha de nacimiento -->
+        <Label text="FECHA DE NACIMIENTO" styleClass="field-label"/>
+        <DatePicker fx:id="fechaNacimientoPicker"
+                    promptText="aaaa-mm-dd"
+                    maxWidth="Infinity"/>
+
+        <!-- Username -->
+        <Label text="NOMBRE DE USUARIO" styleClass="field-label"/>
+        <TextField fx:id="usernameField" promptText="Usuario unico"/>
+
+        <!-- Password -->
+        <Label text="CONTRASENA" styleClass="field-label"/>
+        <PasswordField fx:id="passwordField" promptText="Minimo 6 caracteres"/>
+
+        <!-- Tipo de cuenta -->
+        <Label text="TIPO DE CUENTA" styleClass="field-label"/>
+        <ComboBox fx:id="tipoUsuarioBox" maxWidth="Infinity"/>
+
+        <!-- Panel clave admin (oculto por defecto) -->
+        <VBox fx:id="panelClaveAdmin" spacing="4" managed="false" visible="false">
+            <Label text="CLAVE DE ADMINISTRADOR" styleClass="field-label"/>
+            <PasswordField fx:id="claveAdminField" promptText="Clave requerida para admins"/>
+        </VBox>
+
+        <!-- Mensaje de error/exito -->
+        <Label fx:id="mensajeLabel" text="" wrapText="true"
+               style="-fx-font-size:12px;" maxWidth="Infinity"/>
+
+        <!-- Botones -->
+        <VBox spacing="10" style="-fx-padding:16 0 0 0;">
+            <Button text="&#128221;  Crear Cuenta"
+                    onAction="#handleRegistrar"
+                    styleClass="primary-button"
+                    maxWidth="Infinity"/>
+            <Button text="&#8592;  Volver al Login"
+                    onAction="#handleVolver"
+                    styleClass="secondary-button"
+                    maxWidth="Infinity"/>
+        </VBox>
+
+    </VBox>
+
+</VBox>

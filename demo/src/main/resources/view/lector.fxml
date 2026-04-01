@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.biblioteca_1.ui.LectorController"
+            prefWidth="900" prefHeight="640">
+
+    <left>
+        <VBox styleClass="sidebar" prefWidth="230">
+
+            <VBox styleClass="sidebar-header" spacing="6">
+                <Label text="&#128218;  BIBLIOTECA" styleClass="sidebar-app-name"/>
+                <Label text="Portal del Lector" styleClass="sidebar-role-label"/>
+                <Label fx:id="welcomeLabel" text="Bienvenido" styleClass="sidebar-user-name"/>
+            </VBox>
+
+            <VBox styleClass="sidebar-nav" spacing="2" VBox.vgrow="ALWAYS">
+                <Button fx:id="btnCatalogo"
+                        text="&#128214;  Catalogo de Libros"
+                        styleClass="nav-button"
+                        onAction="#handleVerLibros"
+                        maxWidth="Infinity"/>
+                <Button fx:id="btnMisPrestamos"
+                        text="&#128195;  Mis Prestamos"
+                        styleClass="nav-button"
+                        onAction="#handleMisPrestamos"
+                        maxWidth="Infinity"/>
+            </VBox>
+
+            <VBox styleClass="sidebar-footer">
+                <Button fx:id="logoutButton"
+                        text="&#128682;  Cerrar Sesion"
+                        styleClass="logout-button"
+                        onAction="#handleLogout"
+                        maxWidth="Infinity"/>
+            </VBox>
+
+        </VBox>
+    </left>
+
+    <center>
+        <VBox>
+            <HBox styleClass="top-bar" alignment="CENTER_LEFT" spacing="12">
+                <Label fx:id="pageTitle" text="Catalogo de Libros" styleClass="page-title"/>
+            </HBox>
+            <StackPane fx:id="contentArea" VBox.vgrow="ALWAYS"
+                       style="-fx-background-color: #F5F0E8; -fx-padding: 28;"/>
+        </VBox>
+    </center>
+
+</BorderPane>

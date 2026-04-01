@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.biblioteca_1.ui.UsuariosController"
+            fitToWidth="true"
+            style="-fx-background-color: #F5F0E8; -fx-background: #F5F0E8;">
+
+    <VBox spacing="14" style="-fx-background-color: #F5F0E8;">
+
+        <!-- Cabecera -->
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <VBox spacing="2">
+                <Label text="Usuarios registrados en el sistema"
+                       style="-fx-font-size:13px;-fx-text-fill:#7A6652;"/>
+                <Label fx:id="lblTotal" text="Cargando..."
+                       style="-fx-font-size:12px;-fx-text-fill:#B8860B;-fx-font-weight:bold;"/>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Actualizar" onAction="#handleCargar" styleClass="secondary-button"/>
+            <Button text="+ Nuevo Usuario" onAction="#handleNuevoUsuario" styleClass="primary-button"/>
+        </HBox>
+
+        <!-- Tabla -->
+        <TableView fx:id="tablaUsuarios" minHeight="280">
+            <columns>
+                <TableColumn fx:id="colId"        text="ID"        prefWidth="55"/>
+                <TableColumn fx:id="colNombre"    text="Nombre"    prefWidth="155"/>
+                <TableColumn fx:id="colApellidos" text="Apellidos" prefWidth="155"/>
+                <TableColumn fx:id="colUsername"  text="Username"  prefWidth="135"/>
+                <TableColumn fx:id="colTipo"      text="Tipo"      prefWidth="120"/>
+                <TableColumn fx:id="colAccionU"   text="Acciones"  prefWidth="100"/>
+            </columns>
+            <placeholder>
+                <Label text="No hay usuarios registrados." style="-fx-text-fill:#7A6652;"/>
+            </placeholder>
+        </TableView>
+
+        <!-- Formulario crear usuario -->
+        <VBox fx:id="formUsuarioPanel"
+              style="-fx-background-color:#FEFCF7;-fx-background-radius:10;-fx-padding:24;-fx-border-color:#D4C4A0;-fx-border-radius:10;-fx-border-width:1;"
+              spacing="12" managed="false" visible="false">
+
+            <Label text="Crear Nuevo Usuario"
+                   style="-fx-font-family:'Georgia';-fx-font-size:16px;-fx-font-weight:bold;-fx-text-fill:#2C1810;"/>
+            <Separator/>
+
+            <HBox spacing="12">
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="NOMBRE" style="-fx-font-size:11px;-fx-font-weight:bold;-fx-text-fill:#7A6652;"/>
+                    <TextField fx:id="uNombre" promptText="Nombre"/>
+                </VBox>
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="APELLIDOS" style="-fx-font-size:11px;-fx-font-weight:bold;-fx-text-fill:#7A6652;"/>
+                    <TextField fx:id="uApellidos" promptText="Apellidos"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="12">
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="USERNAME" style="-fx-font-size:11px;-fx-font-weight:bold;-fx-text-fill:#7A6652;"/>
+                    <TextField fx:id="uUsername" promptText="Nombre de usuario unico"/>
+                </VBox>
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="FECHA DE NACIMIENTO" style="-fx-font-size:11px;-fx-font-weight:bold;-fx-text-fill:#7A6652;"/>
+                    <DatePicker fx:id="uFecha" promptText="dd/mm/aaaa" maxWidth="Infinity"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="12">
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="CONTRASENA" style="-fx-font-size:11px;-fx-font-weight:bold;-fx-text-fill:#7A6652;"/>
+                    <PasswordField fx:id="uPassword" promptText="Minimo 6 caracteres"/>
+                </VBox>
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="TIPO DE CUENTA" style="-fx-font-size:11px;-fx-font-weight:bold;-fx-text-fill:#7A6652;"/>
+                    <ComboBox fx:id="uTipo" maxWidth="Infinity"/>
+                </VBox>
+            </HBox>
+
+            <Label fx:id="uMensaje" wrapText="true" style="-fx-font-size:12px;"/>
+
+            <HBox spacing="10">
+                <Button text="Crear Usuario" onAction="#handleGuardarUsuario" styleClass="success-button"/>
+                <Button text="Cancelar"      onAction="#handleCancelarUsuario" styleClass="secondary-button"/>
+            </HBox>
+
+        </VBox>
+
+    </VBox>
+
+</ScrollPane>

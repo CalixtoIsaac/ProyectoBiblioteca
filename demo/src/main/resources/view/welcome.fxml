@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.biblioteca_1.ui.WelcomeController"
+           style="-fx-background-color: #2C1810;"
+           prefWidth="500" prefHeight="580">
+
+    <VBox style="-fx-background-color: #FEFCF7; -fx-background-radius: 12; -fx-padding: 50 60 50 60; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 30, 0, 0, 8);"
+          alignment="CENTER"
+          spacing="14"
+          maxWidth="380">
+
+        <VBox alignment="CENTER" spacing="6">
+            <Label text="&#128218;" style="-fx-font-size: 52px; -fx-text-fill: #B8860B;"/>
+            <Label text="BIBLIOTECA" style="-fx-font-family: 'Georgia'; -fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2C1810;"/>
+            <Label text="Sistema de Gestion de Prestamos" style="-fx-font-size: 12px; -fx-text-fill: #7A6652;"/>
+        </VBox>
+
+        <Separator/>
+
+        <Label text="Que deseas hacer?" style="-fx-font-size: 14px; -fx-text-fill: #7A6652; -fx-padding: 4 0 2 0;"/>
+
+        <Button fx:id="btnLogin"
+                text="&#128274;  Iniciar Sesion"
+                onAction="#goToLogin"
+                styleClass="primary-button"
+                maxWidth="Infinity"/>
+
+        <Button text="&#128221;  Crear una Cuenta"
+                onAction="#goToRegister"
+                styleClass="secondary-button"
+                maxWidth="Infinity"/>
+
+    </VBox>
+
+</StackPane>

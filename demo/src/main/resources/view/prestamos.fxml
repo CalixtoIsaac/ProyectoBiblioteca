@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.biblioteca_1.ui.PrestamosController"
+            fitToWidth="true"
+            style="-fx-background-color: #F5F0E8; -fx-background: #F5F0E8;">
+
+    <VBox spacing="14" style="-fx-background-color: #F5F0E8;">
+
+        <!-- Cabecera -->
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Registro de prestamos activos e historico"
+                   style="-fx-font-size:13px;-fx-text-fill:#7A6652;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Actualizar" onAction="#handleCargar" styleClass="secondary-button"/>
+            <Button fx:id="btnNuevoPrestamo" text="+ Nuevo Prestamo"
+                    onAction="#handleNuevoPrestamo" styleClass="primary-button"/>
+        </HBox>
+
+        <!-- Tabla -->
+        <TableView fx:id="tablaPrestamos" minHeight="280">
+            <columns>
+                <TableColumn fx:id="colId"       text="ID"         prefWidth="50"/>
+                <TableColumn fx:id="colUsuario"  text="ID Usuario" prefWidth="90"/>
+                <TableColumn fx:id="colIsbn"     text="ISBN Libro" prefWidth="115"/>
+                <TableColumn fx:id="colFechaPr"  text="Prestamo"   prefWidth="115"/>
+                <TableColumn fx:id="colFechaDev" text="Devolucion" prefWidth="115"/>
+                <TableColumn fx:id="colEstado"   text="Estado"     prefWidth="85"/>
+                <TableColumn fx:id="colAccion"   text="Acciones"   prefWidth="110"/>
+            </columns>
+            <placeholder>
+                <Label text="No hay prestamos registrados." style="-fx-text-fill:#7A6652;"/>
+            </placeholder>
+        </TableView>
+
+        <!-- Formulario nuevo prestamo (solo admin) -->
+        <VBox fx:id="formPrestamoPanel"
+              style="-fx-background-color:#FEFCF7;-fx-background-radius:10;-fx-padding:24;-fx-border-color:#D4C4A0;-fx-border-radius:10;-fx-border-width:1;"
+              spacing="12" managed="false" visible="false">
+
+            <Label text="Registrar Nuevo Prestamo"
+                   style="-fx-font-family:'Georgia';-fx-font-size:16px;-fx-font-weight:bold;-fx-text-fill:#2C1810;"/>
+            <Separator/>
+
+            <HBox spacing="12">
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="USUARIO" style="-fx-font-size:11px;-fx-font-weight:bold;-fx-text-fill:#7A6652;"/>
+                    <ComboBox fx:id="pUsuarioBox" promptText="Selecciona un usuario" maxWidth="Infinity"/>
+                </VBox>
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="LIBRO" style="-fx-font-size:11px;-fx-font-weight:bold;-fx-text-fill:#7A6652;"/>
+                    <ComboBox fx:id="pLibroBox" promptText="Selecciona un libro" maxWidth="Infinity"/>
+                </VBox>
+            </HBox>
+
+            <Label fx:id="pMensaje" wrapText="true" style="-fx-font-size:12px;"/>
+
+            <HBox spacing="10">
+                <Button text="Registrar Prestamo" onAction="#handleGuardarPrestamo" styleClass="success-button"/>
+                <Button text="Cancelar"           onAction="#handleCancelarPrestamo" styleClass="secondary-button"/>
+            </HBox>
+
+        </VBox>
+
+    </VBox>
+
+</ScrollPane>

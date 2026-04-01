@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.biblioteca_1.ui.AdminController"
+            prefWidth="960" prefHeight="660">
+
+    <left>
+        <VBox styleClass="sidebar" prefWidth="230">
+
+            <VBox styleClass="sidebar-header" spacing="6">
+                <Label text="&#128218;  BIBLIOTECA" styleClass="sidebar-app-name"/>
+                <Label text="Panel Administrador" styleClass="sidebar-role-label"/>
+                <Label fx:id="welcomeLabel" text="Administrador" styleClass="sidebar-user-name"/>
+            </VBox>
+
+            <VBox styleClass="sidebar-nav" spacing="2" VBox.vgrow="ALWAYS">
+                <Button fx:id="btnResumen"
+                        text="&#128202;  Resumen General"
+                        styleClass="nav-button"
+                        onAction="#goResumen"
+                        maxWidth="Infinity"/>
+                <Button fx:id="btnLibros"
+                        text="&#128216;  Gestion de Libros"
+                        styleClass="nav-button"
+                        onAction="#goLibros"
+                        maxWidth="Infinity"/>
+                <Button fx:id="btnUsuarios"
+                        text="&#128100;  Gestion de Usuarios"
+                        styleClass="nav-button"
+                        onAction="#goUsuarios"
+                        maxWidth="Infinity"/>
+                <Button fx:id="btnPrestamos"
+                        text="&#128203;  Gestion de Prestamos"
+                        styleClass="nav-button"
+                        onAction="#goPrestamos"
+                        maxWidth="Infinity"/>
+            </VBox>
+
+            <VBox styleClass="sidebar-footer">
+                <Button fx:id="logoutButton"
+                        text="&#128682;  Cerrar Sesion"
+                        styleClass="logout-button"
+                        onAction="#handleLogout"
+                        maxWidth="Infinity"/>
+            </VBox>
+
+        </VBox>
+    </left>
+
+    <center>
+        <VBox>
+            <HBox styleClass="top-bar" alignment="CENTER_LEFT" spacing="12">
+                <Label fx:id="pageTitle" text="Resumen General" styleClass="page-title"/>
+            </HBox>
+            <StackPane fx:id="contentArea" VBox.vgrow="ALWAYS"
+                       style="-fx-background-color: #F5F0E8; -fx-padding: 28;"/>
+        </VBox>
+    </center>
+
+</BorderPane>

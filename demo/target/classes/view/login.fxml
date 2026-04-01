@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.biblioteca_1.ui.LoginController"
+      styleClass="login-root"
+      alignment="CENTER"
+      spacing="0">
+
+    <VBox styleClass="login-panel" spacing="0" alignment="CENTER">
+
+        <!-- Logo y titulo -->
+        <VBox styleClass="login-logo-area" spacing="6">
+            <Label text="&#128218;" styleClass="login-icon"/>
+            <Label text="BIBLIOTECA" styleClass="login-app-name"/>
+            <Label text="Sistema de Gestion" styleClass="login-subtitle"/>
+        </VBox>
+
+        <Region prefHeight="8"/>
+        <Separator styleClass="divider-line"/>
+        <Region prefHeight="12"/>
+
+        <!-- Campos -->
+        <Label text="USUARIO" styleClass="field-label"/>
+        <TextField fx:id="usernameField" promptText="Nombre de usuario"/>
+
+        <Label text="CONTRASENA" styleClass="field-label"/>
+        <PasswordField fx:id="passwordField" promptText="Contrasena"/>
+
+        <!-- Error -->
+        <Label fx:id="errorLabel" text="" wrapText="true"
+               style="-fx-font-size:12px;-fx-text-fill:#8B1A1A;" maxWidth="Infinity"/>
+
+        <!-- Botones -->
+        <VBox spacing="10" style="-fx-padding:14 0 0 0;">
+            <Button fx:id="btnLogin"
+                    text="&#128274;  Iniciar Sesion"
+                    onAction="#handleLogin"
+                    styleClass="primary-button"
+                    maxWidth="Infinity"/>
+            <Button text="&#128221;  Crear Cuenta"
+                    onAction="#handleRegister"
+                    styleClass="secondary-button"
+                    maxWidth="Infinity"/>
+        </VBox>
+
+    </VBox>
+
+</VBox>

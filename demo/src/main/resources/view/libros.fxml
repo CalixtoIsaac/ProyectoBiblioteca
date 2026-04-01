@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fitToWidth="true"
+            style="-fx-background-color: #F5F0E8; -fx-background: #F5F0E8;"
+            fx:controller="com.biblioteca_1.ui.LibrosController">
+
+    <VBox spacing="14" style="-fx-background-color: #F5F0E8;">
+
+        <!-- Barra de herramientas -->
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <TextField fx:id="searchField"
+                       promptText="Buscar por titulo, autor o ISBN..."
+                       prefWidth="300"
+                       onAction="#handleBuscar"/>
+            <Button text="Buscar" onAction="#handleBuscar" styleClass="secondary-button"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="btnNuevoLibro"
+                    text="+ Agregar Libro"
+                    onAction="#handleNuevoLibro"
+                    styleClass="primary-button"/>
+        </HBox>
+
+        <!-- Tabla + panel lateral -->
+        <HBox spacing="16" minHeight="320">
+
+            <TableView fx:id="tablaLibros" HBox.hgrow="ALWAYS" minHeight="300">
+                <columns>
+                    <TableColumn fx:id="colPortada"  text=""          prefWidth="56"/>
+                    <TableColumn fx:id="colIsbn"     text="ISBN"      prefWidth="95"/>
+                    <TableColumn fx:id="colTitulo"   text="Titulo"    prefWidth="190"/>
+                    <TableColumn fx:id="colAutor"    text="Autor"     prefWidth="145"/>
+                    <TableColumn fx:id="colStock"    text="Disp."     prefWidth="50"/>
+                    <TableColumn fx:id="colTotal"    text="Total"     prefWidth="50"/>
+                    <TableColumn fx:id="colAccion"   text="Acciones"  prefWidth="165"/>
+                </columns>
+                <placeholder>
+                    <Label text="No hay libros registrados." style="-fx-text-fill: #7A6652;"/>
+                </placeholder>
+            </TableView>
+
+            <!-- Panel detalle lateral -->
+            <VBox fx:id="panelDetalle"
+                  style="-fx-background-color: #FEFCF7; -fx-background-radius: 10; -fx-padding: 18; -fx-border-color: #D4C4A0; -fx-border-radius: 10; -fx-border-width: 1;"
+                  spacing="8" prefWidth="195" minWidth="195" maxWidth="195">
+                <ImageView fx:id="imgPortada" fitWidth="159" fitHeight="210" preserveRatio="true"/>
+                <Label fx:id="lblDetalleTitulo" text="Selecciona un libro"
+                       style="-fx-font-family:'Georgia';-fx-font-size:13px;-fx-font-weight:bold;-fx-text-fill:#2C1810;"
+                       wrapText="true"/>
+                <Label fx:id="lblDetalleAutor" text=""
+                       style="-fx-font-size:11px;-fx-text-fill:#7A6652;-fx-font-style:italic;"
+                       wrapText="true"/>
+                <Separator/>
+                <Label fx:id="lblDetalleSinopsis" text=""
+                       style="-fx-font-size:11px;-fx-text-fill:#5C4033;"
+                       wrapText="true"/>
+            </VBox>
+
+        </HBox>
+
+        <!-- Formulario agregar libro (solo admin, oculto por defecto) -->
+        <VBox fx:id="formPanel"
+              style="-fx-background-color: #FEFCF7; -fx-background-radius: 10; -fx-padding: 24; -fx-border-color: #D4C4A0; -fx-border-radius: 10; -fx-border-width: 1;"
+              spacing="12" managed="false" visible="false">
+
+            <Label text="Agregar Nuevo Libro"
+                   style="-fx-font-family:'Georgia';-fx-font-size:16px;-fx-font-weight:bold;-fx-text-fill:#2C1810;"/>
+            <Separator/>
+
+            <HBox spacing="12">
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="ISBN" style="-fx-font-size:11px;-fx-font-weight:bold;-fx-text-fill:#7A6652;"/>
+                    <TextField fx:id="formIsbn" promptText="Ej: 978-0001"/>
+                </VBox>
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="Titulo" style="-fx-font-size:11px;-fx-font-weight:bold;-fx-text-fill:#7A6652;"/>
+                    <TextField fx:id="formTitulo" promptText="Titulo del libro"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="12">
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="Autor" style="-fx-font-size:11px;-fx-font-weight:bold;-fx-text-fill:#7A6652;"/>
+                    <TextField fx:id="formAutor" promptText="Nombre del autor"/>
+                </VBox>
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="Genero" style="-fx-font-size:11px;-fx-font-weight:bold;-fx-text-fill:#7A6652;"/>
+                    <TextField fx:id="formGenero" promptText="Ficcion, Historia..."/>
+                </VBox>
+                <VBox spacing="4" prefWidth="110">
+                    <Label text="Ejemplares" style="-fx-font-size:11px;-fx-font-weight:bold;-fx-text-fill:#7A6652;"/>
+                    <TextField fx:id="formEjemplares" promptText="1"/>
+                </VBox>
+            </HBox>
+
+            <VBox spacing="4">
+                <Label text="Sinopsis" style="-fx-font-size:11px;-fx-font-weight:bold;-fx-text-fill:#7A6652;"/>
+                <TextArea fx:id="formSinopsis" promptText="Descripcion del libro..." prefRowCount="3"/>
+            </VBox>
+
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="Imagen de portada (arrastra o busca)" style="-fx-font-size:11px;-fx-font-weight:bold;-fx-text-fill:#7A6652;"/>
+                    <HBox spacing="8">
+                        <TextField fx:id="formRutaImagen" promptText="Arrastra imagen aqui..." HBox.hgrow="ALWAYS"/>
+                        <Button text="Buscar" onAction="#handleBuscarImagen" styleClass="secondary-button"/>
+                    </HBox>
+                </VBox>
+                <ImageView fx:id="previewPortada" fitWidth="60" fitHeight="80" preserveRatio="true"/>
+            </HBox>
+
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="Archivo del libro (PDF o TXT)" style="-fx-font-size:11px;-fx-font-weight:bold;-fx-text-fill:#7A6652;"/>
+                    <HBox spacing="8">
+                        <TextField fx:id="formRutaPdf" promptText="Arrastra PDF/TXT aqui..." HBox.hgrow="ALWAYS"/>
+                        <Button text="Buscar PDF" onAction="#handleBuscarPdf" styleClass="secondary-button"/>
+                    </HBox>
+                    <Label fx:id="lblPdfSeleccionado" text="" style="-fx-font-size:10px;-fx-text-fill:#4A6741;"/>
+                </VBox>
+            </HBox>
+
+            <Label fx:id="formMensaje" wrapText="true" style="-fx-font-size:12px;"/>
+            <HBox spacing="10">
+                <Button text="Guardar Libro" onAction="#handleGuardarLibro" styleClass="success-button"/>
+                <Button text="Cancelar"      onAction="#handleCancelarForm" styleClass="secondary-button"/>
+            </HBox>
+
+        </VBox>
+
+    </VBox>
+
+</ScrollPane>
