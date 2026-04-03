@@ -49,6 +49,11 @@ git clone https://github.com/CalixtoIsaac/ProyectoBiblioteca.git
 2. Configurar la base de datos:
 - Ejecutar el script en database/schema.sql
 - Utilizar de preferencia la configuracion especificada en config/DatabaseManager.java
+```bash
+    private static final String URL = "jdbc:mysql://localhost:3306/biblioteca_db";
+    private static final String USER = "root";
+    private static final String PASS = "1234"; //Cambiar la contraseña de mysql
+```
 3. Ejecutar el proyecto desde:
   BibliotecaFXApp.java
 
