@@ -48,12 +48,21 @@ git clone https://github.com/CalixtoIsaac/ProyectoBiblioteca.git
 3. Ejecutar el proyecto desde:
   BibliotecaFXApp.java
 
+---
+
+## Archivo ejecutable
+
+Si se desea instalar el programa localmente:
+- target/build-installer.bat
+La base de datos debe de estar configurada localmente
+
 Diagrama UML
 
 <img width="921" height="408" alt="image" src="https://github.com/user-attachments/assets/697e997a-ddfa-4d6d-b91a-0714808fef87" />
 
+---
 
-Capturas GUI
+## Capturas GUI
 
 Iniciar sesion
 
@@ -81,6 +90,13 @@ Capturas BD (Workbench)
 <img width="921" height="601" alt="image" src="https://github.com/user-attachments/assets/fe2078f0-50f6-48d2-85d3-e73de47edcea" />
 <img width="921" height="603" alt="image" src="https://github.com/user-attachments/assets/c172a1ea-8e2a-487f-bc66-c21a9a1170a8" />
 <img width="921" height="620" alt="image" src="https://github.com/user-attachments/assets/2ef0ed3b-9058-44e6-9827-9c22cf73b491" />
+
+---
+
+## Decisión de diseño 
+
+Estética "biblioteca clásica moderna": El CSS usa crema/marrón oscuro/dorado como paleta. Los paneles de login tienen fondo oscuro con tarjeta blanca flotante, y los paneles de admin/lector tienen sidebar lateral oscuro con área de contenido clara.
+
 
 ---
 
