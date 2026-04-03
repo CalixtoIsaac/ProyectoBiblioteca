@@ -1,0 +1,21 @@
+# ===== IDE =====
+.vscode/
+.idea/
+
+# ===== Java =====
+*.class
+
+# ===== Build =====
+build/
+out/
+dist/
+
+# ===== Logs =====
+*.log
+
+# ===== Sistema =====
+.DS_Store
+Thumbs.db
+
+# ===== Otros =====
+*.tmp
