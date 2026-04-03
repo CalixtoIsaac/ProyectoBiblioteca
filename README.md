@@ -8,15 +8,15 @@ Aplicación desarrollada en Java que permite administrar una biblioteca mediante
 
 ## Características
 
-- Gestión de libros (agregar, editar, eliminar, consultar)
-- Gestión de usuarios
-- Control de préstamos y devoluciones
-- Sistema de login
-- Arquitectura basada en MVC
+- 📖 Gestión de libros (agregar, editar, eliminar, consultar)
+- 👤 Gestión de usuarios
+- 🔄 Control de préstamos y devoluciones
+- 🔐 Sistema de login
+- 🧱 Arquitectura basada en MVC
 
 ---
 
-## Tecnologías utilizadas
+## 🛠️ Tecnologías utilizadas
 
 - Java
 - JavaFX
@@ -27,20 +27,26 @@ Aplicación desarrollada en Java que permite administrar una biblioteca mediante
 
 ---
 
-## Estructura del proyecto
+## 📂 Estructura del proyecto
 
 src/
+
 ├── config/
+
 ├── controller/
+
 ├── dao/
+
 ├── model/
+
 ├── service/
+
 ├── ui/
 
 
 ---
 
-## Instalación y uso
+## ⚙️ Instalación y uso
 
 1. Clonar el repositorio:
 ```bash
@@ -73,7 +79,7 @@ La base de datos debe de estar configurada localmente
 
 ---
 
-## Capturas GUI
+## 📸 Capturas GUI
 
 Estética "biblioteca clásica moderna": El CSS usa crema/marrón oscuro/dorado como paleta. Los paneles de login tienen fondo oscuro con tarjeta blanca flotante, y los paneles de admin/lector tienen sidebar lateral oscuro con área de contenido clara.
 
@@ -85,6 +91,7 @@ Estética "biblioteca clásica moderna": El CSS usa crema/marrón oscuro/dorado 
 
 Usuario Lector
 <img width="921" height="698" alt="image" src="https://github.com/user-attachments/assets/ccf0a520-bf95-4c42-8115-b9ad411188ba" />
+
 Usuario Administrador: Clave adicional requerida (BIBLIOTECA123)
 <img width="921" height="780" alt="image" src="https://github.com/user-attachments/assets/51bb314f-fa37-4a1c-a377-6d852711a3ef" />
 
@@ -112,7 +119,7 @@ Prestamos solicitados
 
 ---
 
-## Capturas BD (Workbench)
+## 📸 Capturas BD (Workbench)
 
 <img width="921" height="601" alt="image" src="https://github.com/user-attachments/assets/fe2078f0-50f6-48d2-85d3-e73de47edcea" />
 <img width="921" height="603" alt="image" src="https://github.com/user-attachments/assets/c172a1ea-8e2a-487f-bc66-c21a9a1170a8" />
@@ -120,10 +127,10 @@ Prestamos solicitados
 
 ---
 
-## Autor
+## 🤓​ Autor
 Calixto Isaac
 Estudiante de Ingeniería en Desarrollo de Software
 
 ## Estado del proyecto
-En desarrollo / Proyecto académico con potencial de mejora
+🟢 En desarrollo / Proyecto académico con potencial de mejora
 
