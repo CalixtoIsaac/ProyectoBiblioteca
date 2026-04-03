@@ -2,6 +2,8 @@
 
 Aplicación desarrollada en Java que permite administrar una biblioteca mediante operaciones CRUD, gestionando usuarios, libros y préstamos.
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/38dffdbd-d983-4d6c-aed5-0bedc58dc4e9" />
+
 ---
 
 ## Características
@@ -17,7 +19,9 @@ Aplicación desarrollada en Java que permite administrar una biblioteca mediante
 ## Tecnologías utilizadas
 
 - Java
+- JavaFX
 - JDBC / SQL
+- Workbench
 - CSS (interfaz)
 - Arquitectura MVC
 
@@ -66,6 +70,8 @@ La base de datos debe de estar configurada localmente
 
 ## Capturas GUI
 
+Estética "biblioteca clásica moderna": El CSS usa crema/marrón oscuro/dorado como paleta. Los paneles de login tienen fondo oscuro con tarjeta blanca flotante, y los paneles de admin/lector tienen sidebar lateral oscuro con área de contenido clara.
+
 Iniciar sesion
 
 <img width="921" height="691" alt="image" src="https://github.com/user-attachments/assets/8a42f8d6-e4b8-4661-a829-96bfab3a285a" />
@@ -95,16 +101,10 @@ Capturas BD (Workbench)
 
 ---
 
-## Decisión de diseño 
-
-Estética "biblioteca clásica moderna": El CSS usa crema/marrón oscuro/dorado como paleta. Los paneles de login tienen fondo oscuro con tarjeta blanca flotante, y los paneles de admin/lector tienen sidebar lateral oscuro con área de contenido clara.
-
-
----
-
 ## Autor
 Calixto Isaac
 Estudiante de Ingeniería en Desarrollo de Software
 
 ## Estado del proyecto
 En desarrollo / Proyecto académico con potencial de mejora
+
