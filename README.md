@@ -56,7 +56,9 @@ Si se desea instalar el programa localmente:
 - target/build-installer.bat
 La base de datos debe de estar configurada localmente
 
-Diagrama UML
+---
+
+## Diagrama UML
 
 <img width="921" height="408" alt="image" src="https://github.com/user-attachments/assets/697e997a-ddfa-4d6d-b91a-0714808fef87" />
 
