@@ -1,4 +1,4 @@
-# Sistema de Gestión de Biblioteca
+# 📖 Sistema de Gestión de Biblioteca
 
 Aplicación desarrollada en Java que permite administrar una biblioteca mediante operaciones CRUD, gestionando usuarios, libros y préstamos.
 
